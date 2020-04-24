@@ -1,10 +1,14 @@
 class Bar {
   constructor() {
-    this.doSomething();
+    if (this.wantToDoSomething) this.doSomething();
   }
 
   doSomething() {
     /* functionality not all derived classes want */
+  }
+
+  get wantToDoSomething() {
+    return true;
   }
 }
 
@@ -12,6 +16,11 @@ class Foo extends Bar {
   constructor() {
     super();
   }
+
+  get wantsToDoSomething() {
+    return false;
+  }
 }
 
-// so how do we fix when Foo doesn't want what Bar's doSomething() does?
+// create a Boolean getter on superclass and override on derived class
+// and execute doSomething() only conditionally based on this Boolean
