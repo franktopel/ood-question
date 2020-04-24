@@ -12,7 +12,7 @@ class Bar {
     /* functionality not all derived classes want */
   }
 
-  get wantToDoSomething() {
+  get wantsToDoSomething() {
     return true;
   }
 }
