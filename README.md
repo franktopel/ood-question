@@ -34,3 +34,7 @@ class FooBar extends Baz {
 
 // expand the class hierarchy so derived classes never get what they don't want/need
 ```
+
+| Pros                                                              | Cons                                                                         |
+| ----------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| cleanest solution - everyone gets only and exactly what they need | will over time probably lead to many otherwise unnecessary subclasses of Foo |
