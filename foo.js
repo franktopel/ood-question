@@ -12,6 +12,14 @@ class Foo extends Bar {
   constructor() {
     super();
   }
+
+  doSomething() {
+    this.doNothing();
+  }
+
+  doNothing() {
+    return;
+  }
 }
 
-// so how do we fix when Foo doesn't want what Bar's doSomething() does?
+// overriding the unwanted functionality in the derived class with a noop function
