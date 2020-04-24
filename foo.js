@@ -1,12 +1,11 @@
 const BAR_DEFAULT_OPTIONS = {
-  wantsToDoSomething: true;
-}
+  wantsToDoSomething: true,
+};
 
 class Bar {
   constructor(options = {}) {
     this.options = { ...BAR_DEFAULT_OPTIONS, ...options };
-    if (this.options.wantsToDoSomething)
-      this.doSomething();
+    if (this.options.wantsToDoSomething) this.doSomething();
   }
 
   doSomething() {
@@ -15,8 +14,8 @@ class Bar {
 }
 
 class Foo extends Bar {
-  constructor({ wantsToDoSomething: false }) {
-    super();
+  constructor() {
+    super({ wantsToDoSomething: false }); // Foo tells Bar it doesn't want to doSomething()
   }
 }
 
