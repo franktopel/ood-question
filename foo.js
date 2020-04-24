@@ -1,6 +1,12 @@
+const BAR_DEFAULT_OPTIONS = {
+  wantsToDoSomething: true;
+}
+
 class Bar {
-  constructor() {
-    this.doSomething();
+  constructor(options = {}) {
+    this.options = { ...BAR_DEFAULT_OPTIONS, ...options };
+    if (this.options.wantsToDoSomething)
+      this.doSomething();
   }
 
   doSomething() {
@@ -9,9 +15,10 @@ class Bar {
 }
 
 class Foo extends Bar {
-  constructor() {
+  constructor({ wantsToDoSomething: false }) {
     super();
   }
 }
 
-// so how do we fix when Foo doesn't want what Bar's doSomething() does?
+// add an options parameter to the superclasses' constructor
+// containing Booleans/data controlling the superclasses' behaviour
